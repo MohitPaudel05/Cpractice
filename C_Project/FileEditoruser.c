@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+//function to handle null file
 void nullFile(FILE *file){
     if(file == NULL){
         printf("couldn't open the file");
@@ -8,14 +8,14 @@ void nullFile(FILE *file){
     }
     
 }
-
+//choices
 void menu(){
     printf("\n1.\t Reading a  file");
     printf("\n2.\t writing in a  file");
     printf("\n3.\t Appending a  file");
     printf("\n4.\t Exit");
 }
-
+//function to read a file 
 void readFile(){
     char ch;
     char Filename[300];
@@ -31,29 +31,46 @@ void readFile(){
     }
     fclose(file);
 }
+//function to write in a file
 void writeFile(){
 
+
     FILE *file;
-    file=fopen("C:/Users/mohit/OneDrive/Desktop/c_classroom/C_Project/fileEditor.txt","w");
+    char content[255], Filename[256];
+    printf("\nEnter the file name or file path you want to write: \n");
+    scanf("%s",Filename);
+    file=fopen(Filename,"w");
     nullFile(file);
-    fputs("\n this is what i want to write and want to read\n ",file);
+    printf("\nEnter the content you want to write: \n");
+    getchar();
+    fgets(content,sizeof(content),stdin);
+    fputs(content,file);
     fclose(file);
-    printf("--Below is the written text");
-    readFile();
+    printf("--Below is the written text\n");
+    puts(content);//display the content
 
 }
+//function to append file
 void appendFile(){
     FILE *file;
-    file =fopen("C:/Users/mohit/OneDrive/Desktop/c_classroom/C_Project/fileEditor.txt","a");
+    char content[255], Filename[256];
+    printf("\n Enter the filename or filepath you want to append:\n");
+    scanf("%s",Filename);
+    file =fopen(Filename,"a");
     nullFile(file);
-    fputs("\n this is want i append here",file);
+    printf("--What do you want to add or append: \n");
+    getchar();
+    fgets(content,sizeof(content),stdin);
+    fputs(content,file);
     fclose(file);
+    printf("\nBelow is the appended text:\n");
+    puts(content);
 }
 int main()
 {
     char ch;
     int choose;
-    while (1)
+    while (1) 
     {
         menu();
         printf("\nEnter your choice: ");

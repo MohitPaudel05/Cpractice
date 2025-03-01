@@ -1,4 +1,3 @@
-
- this is what i want to write and want to read
- 
- this is want i append here
+hi this is mohit poudel testing the write function
+just testing the new append function
+just to check the output

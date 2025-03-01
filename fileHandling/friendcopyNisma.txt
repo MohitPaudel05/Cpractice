@@ -1,9 +1,2 @@
-Your name is :m
-Your name is :12
-Your name is :12.000000
-Your name is :xx
-Your name is :12
-Your name is :12.000000
-Your name is :xxxx
-Your name is :123
-Your name is :123.000000
+this is what i want to write
+ 
